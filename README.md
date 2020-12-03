@@ -1,4 +1,14 @@
 # UiFromDirectoryJson
+## Description
+This takes a specific JSON data of directories and files and creates a web ui similar to an file explorer.
+
+## Technologies
+Angular
+
+## Steps
+1. Create a rough ui/ux design.
+2. Create a folder/file structure as required in Angular app
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
 
