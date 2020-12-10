@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'ui-from-directory-json';
+  title = 'ui-from-directory-tree-json';
 }

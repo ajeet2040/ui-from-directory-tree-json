@@ -1,0 +1,36 @@
+<p>file-browser works!</p>
+<div>Using JSON file : {{jsonFilePath}}</div>
+<!-- <tr *ngFor="let data of childTreeData">
+    <td>{{data.name}}</td>
+    <td> {{data.type}} </td>
+</tr> -->
+
+<!-- Back button -->
+<div (click)="navBarData.length>1 && navBarClick(navBarData[navBarData.length-2], navBarData.length-2)">Go Back</div>
+<!-- Navbar -->
+<span *ngFor="let el of navBarData;let i = index" (click)="i!= navBarData.length-1 && navBarClick(el, i)">
+    {{el.name}}&nbsp;
+</span>
+
+<!-- Table of Childs -->
+<table mdbTable>
+    <thead>
+      <tr>
+        <!-- <th>ID</th> -->
+        <th>Name</th>
+        <th>Type</th>
+        <th>Modified At</th>
+        <th>Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let el of childTreeData">
+        <!-- <th scope="row">{{el.id}}</th> -->
+        <td (click)="el.type === 'DIRECTORY' && getCurrentDirectoryChilds(el)">{{el.name}}</td>
+        <td>{{el.type}}</td>
+        <!-- Multiply for  1000 to convert into milliseconds-->
+        <td>{{el.modified_at * 1000| date:'medium'}}</td>
+        <td>{{el.size | fileSize}}</td>
+      </tr>
+    </tbody>
+  </table>

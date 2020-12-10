@@ -1,4 +1,4 @@
-# UiFromDirectoryJson
+# UiFromDirectoryTreeJson
 ## Description
 This takes a specific JSON data of directories and files and creates a web ui similar to an file explorer.
 
