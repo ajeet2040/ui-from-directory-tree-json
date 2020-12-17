@@ -4,11 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule} from '../shared/shared.module'
 import { FileBrowserRoutingModule } from './file-browser-routing.module';
-import { FileBrowserComponent } from './file-browser.component'
+import { FileBrowserComponent } from './file-browser.component';
+import { NavigationComponent } from './navigation/navigation.component'
 
 
 @NgModule({
-  declarations: [FileBrowserComponent],
+  declarations: [FileBrowserComponent, NavigationComponent],
   imports: [
     CommonModule,
     HttpClientModule,

@@ -1,16 +1,4 @@
-<p>file-browser works!</p>
-<div>Using JSON file : {{jsonFilePath}}</div>
-<!-- <tr *ngFor="let data of childTreeData">
-    <td>{{data.name}}</td>
-    <td> {{data.type}} </td>
-</tr> -->
-
-<!-- Back button -->
-<div (click)="navBarData.length>1 && navBarClick(navBarData[navBarData.length-2], navBarData.length-2)">Go Back</div>
-<!-- Navbar -->
-<span *ngFor="let el of navBarData;let i = index" (click)="i!= navBarData.length-1 && navBarClick(el, i)">
-    {{el.name}}&nbsp;
-</span>
+<app-navigation [navBarData]="navBarData" (messageEvent) = "getNavData($event)"></app-navigation>
 
 <!-- Table of Childs -->
 <table class="table table-striped table-hover table-sm">
@@ -34,3 +22,4 @@
       </tr>
     </tbody>
   </table>
+<div>Using JSON file : {{jsonFilePath}}</div>

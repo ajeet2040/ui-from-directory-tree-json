@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { jitOnlyGuardedExpression } from '@angular/compiler/src/render3/util';
 
 @Component({
 	selector: 'app-file-browser',
@@ -40,16 +41,17 @@ export class FileBrowserComponent implements OnInit {
 	getCurrentDirectoryChilds(parentDirectory: any){
 		console.log("parentDirectory", parentDirectory)
 		this.navBarData.push(parentDirectory)
+		console.log("navBarData", this.navBarData)
 		if (this.jsonFileData){
 			this.childTreeData = this.jsonFileData.filter((data:any)=>data.parent_id === parentDirectory["id"]);
 			console.log("this.childTreeData", this.childTreeData)
 		}
 	}
 
-	navBarClick(clickedElement: any, index: number){
-		console.log("clickedElement", clickedElement, "index", index)
-		this.navBarData = this.navBarData.slice(0, index)
-		this.getCurrentDirectoryChilds(clickedElement)
+	getNavData(data:any){
+		console.log("parent clickedElement", data.clickedElement, "parent navBarData", data.navBarData)
+		this.navBarData = data.navBarData;
+		this.getCurrentDirectoryChilds(data.clickedElement);
 	}
 
 
